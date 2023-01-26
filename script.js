@@ -8,6 +8,7 @@ const getDataFromNasa = () => {
     .then((data) => {
       dataWithID = data.filter((element, index) => (element.id = index));
       console.log(dataWithID);
+      findTagInNasaData(dataWithID);
     })
     .catch(function (error) {
       console.log(error);
@@ -23,15 +24,43 @@ let tagPicture = [
   "Mars",
   "Sun",
   "Moon",
+  "Nebula",
   "All",
 ];
 let tagType = ["image", "video"];
 let dataInsert = [];
+let index = 0;
 
-function next(){
-  
+function next() {
+  const nextButtonElement = document.querySelector(".next");
+  nextButtonElement.addEventListener("click", function () {
+    index++;
+    insertPictureOrMovies(dataInsert, index);
+    console.log(index);
+    console.log("test");
+  });
 }
+
+function insertPictureOrMovies(data, index) {
+  let elementToRemove = document.querySelector("a");
+  if (elementToRemove) {
+    elementToRemove.remove();
+  }
+  const parent = document.querySelector("section");
+  const child = document.createElement("a");
+  child.href = `${data[index].url}`;
+  child.target = "_blank";
+  const img = document.createElement("img");
+  img.src = `${data[index].url}`;
+  img.alt = "Dew drop";
+  child.appendChild(img);
+  parent.insertBefore(child, parent.firstChild);
+}
+
+next();
+//todo
 function findTagInNasaData(dataWithID) {
+  index = 0
   let allTags = [...tagPicture, ...tagType];
   dataInsert = [];
   console.log(allTags);
@@ -46,11 +75,14 @@ function findTagInNasaData(dataWithID) {
       }
     });
   });
-  removeDuplicate();  
-  return console.log(dataInsert);
+  removeDuplicate();
+  insertPictureOrMovies(dataInsert, 0);
+  console.log(dataInsert);
+
+  return dataInsert;
 }
 
-function removeDuplicate(){
+function removeDuplicate() {
   const uniqueIdsToDisplay = [];
   dataInsert = dataInsert.filter((element) => {
     const isDuplicate = uniqueIdsToDisplay.includes(element.id);

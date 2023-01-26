@@ -43,7 +43,8 @@ h3 {
   color: white;
   border: solid 3px rgb(255, 255, 255);
   background-color: rgb(0, 0, 0);
-  max-margin: 20px;
+  
+  
 }
 .type {
   display: inline-block;
@@ -55,6 +56,7 @@ h3 {
 .movePicture {
   background-color: whitesmoke;
   color: black;
+  
 }
 
 .reductionVisibilityNextPrevButton {
@@ -65,7 +67,18 @@ h3 {
   color: rgb(255, 255, 255, 0.2);
   border: solid 3px rgb(255, 255, 255, 0.2);
 }
-
+.movePicture{
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.next{
+  margin-left: 85px;
+}
+.prev{
+  margin-left: -85px;
+}
 body {
   background-color: rgb(1, 1, 1);
 
@@ -81,11 +94,38 @@ div {
   float: left;
   width: 50%;
 }
+.title{
+  font-size: 40px;
+  font-weight: 700;
 
-img {
+}
+.explanation{
+  font-size: 20px;
+  font-weight: 500;
+}
+.description{
+    padding-left: 50px;
+    margin-left: 30px;
+    float: left;
+    max-width: 45%;
+    border: 0px;
+    text-align: justify;
+  
+}
+
+
+img{
   margin-top: 30px;
   border: solid 5px white;
   max-height: 700px;
+  max-width: 50%;
+}
+
+iframe {
+  margin-top: 30px;
+  border: solid 5px;
+  width: 800px;
+  height: 600px;
 }
 footer {
   position: absolute;

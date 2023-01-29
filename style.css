@@ -19,7 +19,7 @@ h1 {
 }
 h2 {
   width: 50;
-  font-size: 25px;
+  font-size: 35px;
   font-weight: 100;
 }
 
@@ -43,8 +43,20 @@ h3 {
   color: white;
   border: solid 3px rgb(255, 255, 255);
   background-color: rgb(0, 0, 0);
+}
+ form{
+  display: inline-block;
+  margin: 15px;
+  color: white;
+  border: solid 3px rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+
+ } 
+
+input{
   
   
+  font-size: 25px;
 }
 .type {
   display: inline-block;
@@ -100,8 +112,9 @@ div {
 
 }
 .explanation{
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 500;
+  color: aliceblue;
 }
 .description{
     padding-left: 50px;

@@ -1,20 +1,4 @@
 let dataWithID = [];
-const getDataFromNasa = () => {
-  fetch(
-    `https://api.nasa.gov/planetary/apod?api_key=lxxVWb664W1Z1XEmHEsChUzLGFriIQKYZdXU8sdk&start_date=2022-01-01`
-  )
-    .then((response) => response.json())
-    .then((data) => {
-      dataWithID = data.filter((element, index) => (element.id = index));
-      console.log(dataWithID);
-      findTagInNasaData(dataWithID);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-};
-getDataFromNasa();
-
 let tagPicture = [
   "Jupiter",
   "Comet",
@@ -26,7 +10,8 @@ let tagPicture = [
   "Nebula",
   "All",
 ];
-let tagType = ["image", "video"];
+
+
 let dataInsert = [];
 let index = 0;
 const parent = document.querySelector("section");
@@ -35,6 +20,7 @@ const nextButtonElement = document.querySelector(".next");
 const prevButtonElement = document.querySelector(".prev");
 const buttonMovePictureElement = document.querySelector(".movePicture");
 const cardClassElement = document.querySelector(".card");
+const inputElement = document.querySelector(".tagType")
 
 function createChildElement(
   getParentElement,
@@ -50,14 +36,46 @@ function createChildElement(
   childElement.innerHTML = `${setText}`;
   parentElement.appendChild(childElement);
 }
+const input = document.createElement("input");
+input.type = "date";
+input.id = "userDate";
+inputElement.appendChild(input);
+
+const inputDate = document.getElementById("userDate").value;
+const form = document.createElement("form");
+const submitButton = document.createElement("button");
+submitButton.innerHTML = `Submit`;
+submitButton.className = 'button'
+form.appendChild(submitButton);
+inputElement.appendChild(form);
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  const inputDate = document.getElementById("userDate").value;
+  console.log(inputDate);
+  getDataFromNasa(inputDate);
+});
 
 tagPicture.forEach((element) => {
   createChildElement(".tagPicture", "button", "button", element, "picture");
 });
 
-tagType.forEach((element) => {
-  createChildElement(".tagType", "button", "button", element, "type");
-});
+const getDataFromNasa = (inputDate) => {
+  fetch(
+    `https://api.nasa.gov/planetary/apod?api_key=lxxVWb664W1Z1XEmHEsChUzLGFriIQKYZdXU8sdk&start_date=${inputDate}`
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      dataWithID = data.filter((element, index) => (element.id = index));
+      console.log(dataWithID);
+      findTagInNasaData(dataWithID);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+};
+
+
 
 const picturesElement = document.querySelectorAll(`.picture`);
 picturesElement.forEach((picture) => {
@@ -67,7 +85,7 @@ picturesElement.forEach((picture) => {
     tagPicture.includes(nameButton)
       ? (tagPicture = tagPicture.filter((item) => item !== nameButton))
       : tagPicture.push(nameButton);
-
+    console.log(inputDate, "testInput");
     findTagInNasaData(dataWithID);
   });
 });
@@ -179,7 +197,7 @@ function insertDescriptionCard(data, index) {
 //todo
 function findTagInNasaData(dataWithID) {
   index = 0;
-  let allTags = [...tagPicture, ...tagType];
+  let allTags = [...tagPicture];
   dataInsert = [];
   console.log(allTags);
   dataWithID.forEach((element) => {
@@ -213,22 +231,4 @@ function removeDuplicate() {
   });
 }
 
-// toggleButtom(".type", tagType)
-// toggleButtom(".picture", tagPicture)
 
-// function toggleButtom(classOfButtonElement, arrayWithTags){
-
-// const buttomsElement = document.querySelectorAll(classOfButtonElement);
-// buttomsElement.forEach((button) => {
-//   button.addEventListener(`click`, function (event) {
-//     button.classList.toggle("reductionVisibility");
-//     const nameButton = event.target.textContent;
-//     console.log(arrayWithTags);
-//     arrayWithTags.includes(nameButton)
-//       ? (arrayWithTags = arrayWithTags.filter((item) => item !== nameButton))
-//       : arrayWithTags.push(nameButton);
-//     findTagInNasaData(dataWithID);
-//   });
-// });
-
-// }

@@ -10,8 +10,6 @@ let tagPicture = [
   "Nebula",
   "All",
 ];
-
-
 let dataInsert = [];
 let index = 0;
 const parent = document.querySelector("section");
@@ -28,27 +26,27 @@ function createChildElement(
   setChildClass,
   setText,
   SetAnotherChildClass
-) {
-  const parentElement = document.querySelector(`${getParentElement}`);
-  const childElement = document.createElement(`${createChild}`);
-  childElement.classList.add(`${setChildClass}`);
-  childElement.classList.add(`${SetAnotherChildClass}`);
-  childElement.innerHTML = `${setText}`;
-  parentElement.appendChild(childElement);
-}
-const input = document.createElement("input");
-input.type = "date";
-input.id = "userDate";
-inputElement.appendChild(input);
-
-const inputDate = document.getElementById("userDate").value;
-const form = document.createElement("form");
-const submitButton = document.createElement("button");
-submitButton.innerHTML = `Submit`;
-submitButton.className = 'button'
-form.appendChild(submitButton);
-inputElement.appendChild(form);
-
+  ) {
+    const parentElement = document.querySelector(`${getParentElement}`);
+    const childElement = document.createElement(`${createChild}`);
+    childElement.classList.add(`${setChildClass}`);
+    childElement.classList.add(`${SetAnotherChildClass}`);
+    childElement.innerHTML = `${setText}`;
+    parentElement.appendChild(childElement);
+  }
+  const input = document.createElement("input");
+  input.type = "date";
+  input.id = "userDate";
+  inputElement.appendChild(input);
+  
+  const inputDate = document.getElementById("userDate").value;
+  const form = document.createElement("form");
+  const submitButton = document.createElement("button");
+  submitButton.innerHTML = `Submit`;
+  submitButton.className = 'button'
+  form.appendChild(submitButton);
+  inputElement.appendChild(form);
+  
 form.addEventListener("submit", function (event) {
   event.preventDefault();
   const inputDate = document.getElementById("userDate").value;
@@ -75,8 +73,6 @@ const getDataFromNasa = (inputDate) => {
     });
 };
 
-
-
 const picturesElement = document.querySelectorAll(`.picture`);
 picturesElement.forEach((picture) => {
   picture.addEventListener(`click`, function (event) {
@@ -86,18 +82,6 @@ picturesElement.forEach((picture) => {
       ? (tagPicture = tagPicture.filter((item) => item !== nameButton))
       : tagPicture.push(nameButton);
     console.log(inputDate, "testInput");
-    findTagInNasaData(dataWithID);
-  });
-});
-
-const typesElement = document.querySelectorAll(`.type`);
-typesElement.forEach((type) => {
-  type.addEventListener(`click`, function (event) {
-    type.classList.toggle("reductionVisibility");
-    const nameButton = event.target.textContent;
-    tagType.includes(nameButton)
-      ? (tagType = tagType.filter((item) => item !== nameButton))
-      : tagType.push(nameButton);
     findTagInNasaData(dataWithID);
   });
 });

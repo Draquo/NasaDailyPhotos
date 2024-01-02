@@ -16,7 +16,7 @@ Welcome to the NASA APOD Viewer project! This web application allows you to expl
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/nasa-apod-viewer.git
+    git clone https://github.com/CodecoolGlobal/ask-nasa-javascript-Draquo.git
     ```
 
 2. Open the project folder in your code editor.
@@ -58,16 +58,6 @@ This project is built using HTML, CSS, and JavaScript with the Fetch API for mak
 ### API Reference
 
 - [NASA APOD API](https://api.nasa.gov/planetary/apod)
-
-## Contributing
-
-We welcome contributions! Please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch: `git checkout -b feature/your-feature`.
-3. Commit your changes: `git commit -m 'Add some feature'`.
-4. Push to the branch: `git push origin feature/your-feature`.
-5. Open a pull request.
 
 ## Contributors
 

@@ -16,7 +16,7 @@ Welcome to the NASA APOD Viewer project! This web application allows you to expl
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/CodecoolGlobal/ask-nasa-javascript-Draquo.git
+    git clone https://github.com/Draquo/NasaDailyPhotos.git
     ```
 
 2. Open the project folder in your code editor.

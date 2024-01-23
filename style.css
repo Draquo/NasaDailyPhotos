@@ -1,0 +1,169 @@
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+h1 {
+  margin: auto;
+  height: auto;
+  width: auto;
+  font-size: 75px;
+  font-weight: 200;
+  border: solid 7px white;
+  background-color: rgb(0, 0, 0);
+}
+h2 {
+  width: 50;
+  font-size: 35px;
+  font-weight: 100;
+}
+
+h3 {
+  width: 50;
+  font-size: 10px;
+  font-weight: 100;
+}
+
+.button {
+  font-family: "Orbitron", sans-serif;
+  font-size: 20px;
+  font-weight: 100;
+  height: fit-content;
+  width: fit-content;
+  padding: 5px 10px 5px 10px;
+}
+.picture {
+  display: inline-block;
+  margin: 15px;
+  color: white;
+  border: solid 3px rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+}
+ form{
+  display: inline-block;
+  margin: 15px;
+  color: white;
+  border: solid 3px rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+
+ } 
+
+input{
+  
+  
+  font-size: 25px;
+}
+.type {
+  display: inline-block;
+  margin: 15px;
+  color: white;
+  border: solid 3px white;
+  background-color: rgb(0, 0, 0);
+}
+.movePicture {
+  background-color: whitesmoke;
+  color: black;
+  
+}
+
+.reductionVisibilityNextPrevButton {
+  background-color: rgb(255, 255, 255, 0.2);
+}
+
+.reductionVisibility {
+  color: rgb(255, 255, 255, 0.2);
+  border: solid 3px rgb(255, 255, 255, 0.2);
+}
+.movePicture{
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.next{
+  margin-left: 85px;
+}
+.prev{
+  margin-left: -85px;
+}
+body {
+  background-color: rgb(1, 1, 1);
+
+  text-align: center;
+  font-family: "Orbitron", sans-serif;
+  color: white;
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
+}
+div {
+  float: left;
+  width: 50%;
+}
+.title{
+  font-size: 40px;
+  font-weight: 700;
+
+}
+.explanation{
+  font-size: 25px;
+  font-weight: 500;
+  color: aliceblue;
+}
+.description{
+    padding-left: 50px;
+    margin-left: 30px;
+    float: left;
+    max-width: 45%;
+    border: 0px;
+    text-align: justify;
+  
+}
+
+.container{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.first{
+  float: left;
+  text-align: left;
+}
+.second{
+  float: right;
+  text-align: right;
+}
+
+img{
+  margin-top: 30px;
+  border: solid 5px white;
+  max-height: 700px;
+  max-width: 50%;
+}
+
+iframe {
+  margin-top: 30px;
+  border: solid 5px;
+  width: 800px;
+  height: 600px;
+}
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: rgb(0, 0, 0);
+  text-align: right;
+  font-size: 20px;
+  font-weight: 100;
+  border: solid 7px white;
+  background-color: rgb(0, 0, 0);
+}

@@ -61,7 +61,7 @@ This project is built using HTML, CSS, and JavaScript with the Fetch API for mak
 
 ## Contributors
 
-- [Your Name]
+- Marcin Kącki (Draquo)
 
 Feel free to contribute by submitting bug reports, feature requests, or pull requests.
 

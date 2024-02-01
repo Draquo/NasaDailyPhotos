@@ -1,9 +1,7 @@
 let dataWithID = [];
 let tagPicture = [
   "Jupiter",
-  "Comet",
   "Galaxy",
-  "Saturn",
   "Mars",
   "Sun",
   "Moon",

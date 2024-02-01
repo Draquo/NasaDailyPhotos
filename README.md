@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Welcome to the NASA APOD Viewer project! This web application allows you to explore NASA's Astronomy Picture of the Day (APOD) API, displaying daily celestial images along with detailed information.
+Hello and welcome to the NASA APOD Viewer – my very first JavaScript application! I embarked on this exciting journey to create a web application that harnesses the power of NASA's Astronomy Picture of the Day (APOD) API. Throughout this development process, I delved into the world of JavaScript and learned to integrate API functionalities, resulting in a unique platform for exploring the wonders of our universe.
 
 ### Sample
 ![sample.gif](readmeSources%2Fsample.gif)
